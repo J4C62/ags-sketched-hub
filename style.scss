@@ -8,6 +8,7 @@ window.Bar {
   font-weight: bold;
   color: #fdfdfd;
   font-family: "Rock Salt", cursive;
+  -gtk-icon-size: 11px;
   > centerbox {
     font-size: 8px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
@@ -19,22 +20,40 @@ window.Bar {
       border-radius: 6px;
       border: dotted 3px #41403e;
       margin: 2px;
-
       .quick-setting {
+        padding: 4px;
         background: #222;
         margin: 2px;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         border-radius: 4px;
         transition: transform 0.2s;
         font-size: 10px;
+        border: dotted 1px #41403e;
         &:hover {
           transform: scale(1.1) rotate(-3deg);
           background: #444;
         }
+        #popover-wifi {
+          margin-top: 10px;
+          #scrolled-wifi {
+            min-height: 100px;
+            min-width: 140px;
+          }
+        }
       }
     }
+    popover contents {
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      background: #333;
+      color: #fff;
+      text-shadow: 1px 1px #222;
+      border-radius: 6px;
+      border: dotted 3px #41403e;
+    }
+
     #clock {
       font-family: "UnifrakturCook", cursive;
+      padding: 2px;
       font-size: 0.85rem;
       letter-spacing: 0.5px;
       padding: 1px 10px;
@@ -65,6 +84,6 @@ window.Bar {
   }
 
   button {
-    border-radius: 8px;
+    all: unset;
   }
 }

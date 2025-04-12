@@ -1,6 +1,7 @@
 import { App, Astal, Gdk, Gdk } from "astal/gtk4"
 import { GLib, Variable } from "astal"
 import Workspaces from "./Workspaces"
+import Wifi from "./Wifi"
 const time = Variable(GLib.DateTime.new_now_local()).poll(1000, () =>
 	GLib.DateTime.new_now_local()
 
@@ -22,9 +23,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
 			</box>
 
 			<box name="quick-settings-btn">
-				<box cssClasses={["quick-setting"]}>
-					<image iconName={"network-wireless-symbolic"} />
-				</box>
+				<Wifi />
 				<box cssClasses={["quick-setting"]}>
 					<image iconName={"bluetooth-symbolic"} />
 				</box>
