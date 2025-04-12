@@ -3,18 +3,68 @@ $fg-color: #{"@theme_fg_color"};
 $bg-color: #{"@theme_bg_color"};
 
 window.Bar {
-    background: transparent;
-    color: $fg-color;
-    font-weight: bold;
+  background: transparent;
+  color: $fg-color;
+  font-weight: bold;
+  color: #fdfdfd;
+  font-family: "Rock Salt", cursive;
+  > centerbox {
+    font-size: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    #quick-settings-btn {
+      font-family: "UnifrakturCook", cursive;
+      background: #333;
+      color: #fff;
+      text-shadow: 1px 1px #222;
+      border-radius: 6px;
+      border: dotted 3px #41403e;
+      margin: 2px;
 
-    >centerbox {
-        background: $bg-color;
-        border-radius: 10px;
-        margin: 8px;
-    }
-
-    button {
-        border-radius: 8px;
+      .quick-setting {
+        background: #222;
         margin: 2px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        transition: transform 0.2s;
+        font-size: 10px;
+        &:hover {
+          transform: scale(1.1) rotate(-3deg);
+          background: #444;
+        }
+      }
     }
+    #clock {
+      font-family: "UnifrakturCook", cursive;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      padding: 1px 10px;
+      background: #333;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px #222;
+      border-radius: 6px;
+      border: dotted 3px #41403e;
+      margin: 2px;
+    }
+
+    .workspace {
+      padding: 1px 10px;
+      background: #333;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px #222;
+      border-radius: 6px;
+      border: dotted 3px #41403e;
+      margin: 2px;
+      &.active {
+        background: #aaa;
+        color: #222;
+        text-shadow: none;
+      }
+    }
+  }
+
+  button {
+    border-radius: 8px;
+  }
 }
