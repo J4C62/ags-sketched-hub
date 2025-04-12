@@ -1,6 +1,6 @@
 import { App, Astal, Gdk, Gdk } from "astal/gtk4"
 import { GLib, Variable } from "astal"
-
+import Workspaces from "./Workspaces"
 const time = Variable(GLib.DateTime.new_now_local()).poll(1000, () =>
 	GLib.DateTime.new_now_local()
 
@@ -8,7 +8,6 @@ const time = Variable(GLib.DateTime.new_now_local()).poll(1000, () =>
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
 	const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
-
 	return <window
 		visible
 		cssClasses={["Bar"]}
@@ -17,12 +16,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
 		anchor={TOP | LEFT | RIGHT}
 		application={App}>
 		<centerbox cssName="centerbox">
-			<box name="workspace-section" horizontal spacing={3}>
-				<box cssClasses={["workspace"]}>I</box>
-				<box cssClasses={["workspace", "active"]}>II</box>
-				<box cssClasses={["workspace"]}>III</box>
-				<box cssClasses={["workspace"]}>IV</box>
-			</box>
+			<Workspaces />
 			<box name="clock" horizontal spacing={3}>
 				<label label={time((t) => t.format("%H:%M")!)} />
 			</box>
