@@ -12,33 +12,67 @@ window.Bar {
   > centerbox {
     font-size: 8px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    #quick-settings-btn {
-      font-family: "UnifrakturCook", cursive;
-      background: #333;
-      color: #fff;
-      text-shadow: 1px 1px #222;
-      border-radius: 6px;
-      border: dotted 3px #41403e;
+
+    .quick-setting {
+      padding: 4px;
+      background: #222;
       margin: 2px;
-      .quick-setting {
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      transition: transform 0.2s;
+      font-size: 10px;
+      border: dotted 1px #41403e;
+      color: #fff;
+
+      &:hover {
+        transform: scale(1.1) rotate(-3deg);
+        background: #444;
+      }
+
+      &.connected {
+        font-weight: bold;
+        text-shadow: none;
+        background: #aaa;
+        box-shadow: 0 0 6px rgba(191, 160, 82, 0.4);
+        transition: transform 0.2s;
+      }
+    }
+    #refresh-btn {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    #popover-wifi {
+      margin-top: 10px;
+      #scrolled-wifi {
+        min-height: 200px;
+        min-width: 200px;
+      }
+    }
+    #password-entry-popover {
+      background: #333;
+      border: 2px solid #555;
+      border-radius: 6px;
+      padding: 10px;
+      color: white;
+
+      entry {
+        border: 1px solid #888;
+        border-radius: 4px;
         padding: 4px;
         background: #222;
-        margin: 2px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        color: white;
+      }
+
+      button {
+        margin-top: 6px;
+        background: #2ecc71;
+        color: black;
+        font-weight: bold;
         border-radius: 4px;
-        transition: transform 0.2s;
-        font-size: 10px;
-        border: dotted 1px #41403e;
+        padding: 4px 8px;
+
         &:hover {
-          transform: scale(1.1) rotate(-3deg);
-          background: #444;
-        }
-        #popover-wifi {
-          margin-top: 10px;
-          #scrolled-wifi {
-            min-height: 100px;
-            min-width: 140px;
-          }
+          background: #27ae60;
         }
       }
     }
@@ -75,6 +109,7 @@ window.Bar {
       border-radius: 6px;
       border: dotted 3px #41403e;
       margin: 2px;
+      font-size: 6px;
       &.active {
         background: #aaa;
         color: #222;
